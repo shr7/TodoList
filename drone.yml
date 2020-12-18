@@ -1,0 +1,22 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: run-test-cases
+    image: cypress/base
+    when:
+      status:
+      - failure
+      - success
+    commands:
+      - npm install
+      - cd src && npm install && npm test
+      - cd ./client && npm install && npm test
+  - name: result
+    image: node
+    when:
+      status:
+      - failure
+      - success
+    commands:
+      - node parser.js

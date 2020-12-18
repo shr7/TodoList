@@ -1,0 +1,8 @@
+.doneTodo {
+  text-decoration: line-through;
+}
+.todo-item {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
