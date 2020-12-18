@@ -9,7 +9,6 @@ steps:
       - failure
       - success
     commands:
-      - npm install
       - cd src && npm install && npm test
       - cd ./client && npm install && npm test
   - name: result
